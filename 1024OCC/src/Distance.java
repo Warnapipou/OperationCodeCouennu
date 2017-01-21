@@ -1,4 +1,4 @@
 
-public class Distance {
+public class Distance extends Cartes {
 /////
 }
