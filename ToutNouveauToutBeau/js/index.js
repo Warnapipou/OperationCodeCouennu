@@ -90,7 +90,7 @@ $(document).ready(function(){
     // On interroge le serveur afin de savoir quand la partir commence;
     function debutPartie() {
         $.ajax({
-            url: 'server/debut',
+            url: 'debutPartie',
             success: function (data, textStatus, jqXHR) {
                 if(data.response != 'non'){
                     $("#map").show();
