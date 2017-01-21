@@ -27,7 +27,7 @@ $(document).ready(function(){
         attentePartie: 1000,
         monTour: 1000,
     };
-    
+
     var idTimer = {
         debutPartie: undefined,
         monTour: undefined,
@@ -89,8 +89,11 @@ $(document).ready(function(){
     
     // On interroge le serveur afin de savoir quand la partir commence;
     function debutPartie() {
+        var nom = $('#nom').val();
+        console.log(nom);
         $.ajax({
             url: 'debutPartie',
+            data: {nom : nom},
             success: function (data, textStatus, jqXHR) {
                 if(data.response != 'non'){
                     $("#map").show();
@@ -99,7 +102,7 @@ $(document).ready(function(){
                     $('.carte_main').each(function(){
                         var img = $(this + 'img');
                         console.log('image : ' + data.response[img.data('img')]);
-                        img.attr('src', '/images/1000bornes/' + data.response[img.data('img')] + '.png')
+                        img.attr('src', images.response[img.data('img')]);
                     });
                     
                     idTimer.monTour = window.setInterval(monTour, timer.monTour);
