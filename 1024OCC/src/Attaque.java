@@ -9,6 +9,10 @@ public class Attaque extends Cartes {
 		Rouge
 	};
 
+	Attaque(int i) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getM_type() {
 		return m_type;
 	}

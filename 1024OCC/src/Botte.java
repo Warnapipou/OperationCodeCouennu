@@ -8,6 +8,10 @@ public class Botte extends Cartes{
 		Prioritaire
 	};
 
+	Botte(int i) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getM_type() {
 		return m_type;
 	}

@@ -9,6 +9,10 @@ public class Defense extends Cartes {
 		Vert
 	};
 
+	Defense(int i) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getM_type() {
 		return m_type;
 	}
