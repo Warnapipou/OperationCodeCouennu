@@ -51,15 +51,23 @@ and open the template in the editor.
                 <div class="col-md-1"></div>
                 <div id="conteneur_main">
                     <div class="col-md-1 carte_main" data-carte="25">
-                        <img src="images/1000bornes/25.png"/>
+                        <img src="images/1000bornes/25.png" data-img="1"/>
                     </div>
                     <div class="col-md-1 carte_main" data-carte="vert">
-                        <img src="images/1000bornes/vert.png"/>
+                        <img src="images/1000bornes/vert.png" data-img="2"/>
                     </div>
-                    <div class="col-md-1 carte_main">Carte 3</div>
-                    <div class="col-md-1 carte_main">Carte 4</div>
-                    <div class="col-md-1 carte_main">Carte 5</div>
-                    <div class="col-md-1 carte_main">Carte 6</div>
+                    <div class="col-md-1 carte_main" data-carte="">
+                        <img src="" data-img="3"/>
+                    </div>
+                    <div class="col-md-1 carte_main" data-carte="">
+                        <img src="" data-img="4"/>
+                    </div>
+                    <div class="col-md-1 carte_main" data-carte="">
+                        <img src="" data-img="5"/>
+                    </div>
+                    <div class="col-md-1 carte_main" data-carte="">
+                        <img src="" data-img="6"/>
+                    </div>
                     <div class="col-md-1"></div>
                     <div class="col-md-1 defausse">Défausse</div>
                 </div>
