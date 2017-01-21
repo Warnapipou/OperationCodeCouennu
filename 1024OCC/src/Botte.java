@@ -1,4 +1,4 @@
 
-public class Botte {
+public class Botte extends Cartes{
 //////
 }

@@ -1,4 +1,4 @@
 
-public class Attaque {
+public class Attaque extends Cartes {
 ////////
 }

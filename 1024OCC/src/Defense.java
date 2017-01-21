@@ -1,4 +1,4 @@
 
-public class Defense {
+public class Defense extends Cartes {
 //////
 }
