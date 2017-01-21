@@ -7,23 +7,33 @@ $(document).ready(function(){
         75: img_path + '75.png',
         100: img_path + '100.png',
         200: img_path + '200.png',
-        feu_vert: img_path + 'vert.png',
-        feu_rouge: img_path + 'rouge.png',
+        vert: img_path + 'vert.png',
+        rouge: img_path + 'rouge.png',
         accident: img_path + 'accident.png',
         reparation: img_path + 'reparation.png',
         panne_essence: img_path + 'panne_essence.png',
-        plein_essence: img_path + 'essence.png',
-        pneu_creve: img_path + 'creve.png',
-        pneu: img_path + 'roue_secours.png',
+        essence: img_path + 'essence.png',
+        creve: img_path + 'creve.png',
+        roue_secours: img_path + 'roue_secours.png',
         limite_vitesse: img_path + 'limite_vitesse.png',
         fin_limite_vitesse: img_path + 'fin_limite_vitesse.png',
         as_volant: img_path + 'as_volant.png',
         pompier: img_path + 'pompier.png',
         citerne: img_path + 'citerne.png',
         increvable: img_path + 'increvable.png',
-    }
+    };
     
-    L.Mappy.setImgPath("/images");
+    var timer = {
+        attentePartie: 1000,
+        monTour: 1000,
+    };
+    
+    var idTimer = {
+        debutPartie: undefined,
+        monTour: undefined,
+    };
+    
+    L.Mappy.setImgPath("images/");
     // Création de la carte
     var map = new L.Mappy.Map("map", {
         clientId: 'dri_24hducode',
@@ -54,14 +64,66 @@ $(document).ready(function(){
         }
     });*/
     
+    // Gestion des cartes de la main
     $('.carte_main').each(function(){
         //$(this).draggable({ containment: "#conteneur_main", scroll: false })
         $(this).click(function(){
             var conteneur_main = $('#conteneur_main div');
             conteneur_main.each(function(){
                 $(this).removeClass('selected');
-            })
+            });
             $(this).addClass('selected');
         });
     });
+    
+    idTimer.debutPartie = window.setInterval(debutPartie, timer.attentePartie);
+    
+    $.ajaxSetup({
+        type: 'get',
+        error: function(data, textStatus, jqXHR) {
+            console.log(data);
+            console.log(textStatus);
+            console.log(jqXHR);
+        }
+    });
+    
+    // On interroge le serveur afin de savoir quand la partir commence;
+    function debutPartie() {
+        $.ajax({
+            url: 'debutPartie',
+            success: function (data, textStatus, jqXHR) {
+                if(data.response != 'non'){
+                    $("#map").show();
+                    // On affecte les cartes au joueurs.
+                    
+                    $('.carte_main').each(function(){
+                        var img = $(this + 'img');
+                        console.log('image : ' + data.response[img.data('img')]);
+                        img.attr('src', '/images/1000bornes/' + data.response[img.data('img')] + '.png')
+                    });
+                    
+                    idTimer.monTour = window.setInterval(monTour, timer.monTour);
+                    window.clearInterval(idTimer.debutPartie);
+                }
+            }
+        });
+    }
+
+    // On demande au serveur si c'est mon tour.
+    function monTour() {
+        $.ajax({
+            url: "/serveur/tour",
+            success: function (data, textStatus, jqXHR) {
+                if(data.response == 'ok'){
+                    $("#loader").hidden();
+                    // On stop les appels ajax, c'est a moi de jouer.
+                    window.clearInterval(idTimer.monTour);
+                }
+                else{
+                    $("#loader").show();
+                }
+            }
+        });
+    }
 });
+
