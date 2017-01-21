@@ -40,7 +40,6 @@ public class callPJ {
 			sUrl += "max=" + hParam.get("max");
 		}
 		
-		
 		// param page
 		if(hParam.containsKey("page")){
 			if(sUrl.indexOf("?") != (sUrl.length()-1)){
@@ -48,7 +47,6 @@ public class callPJ {
 			}
 			sUrl += "page=" + hParam.get("page");
 		}
-		
 		
 		// param proximity
 		if(hParam.containsKey("proximity")){
@@ -116,7 +114,6 @@ public class callPJ {
 		}
 		sUrl += "app_key="+m_applicationKey;
 		
-		System.out.println(sUrl);
 		return sUrl;
 	}
 	
