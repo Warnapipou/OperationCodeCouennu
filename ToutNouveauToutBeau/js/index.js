@@ -76,7 +76,6 @@ $(document).ready(function(){
         });
     });
     
-    idTimer.debutPartie = window.setInterval(debutPartie, timer.attentePartie);
     
     $.ajaxSetup({
         type: 'get',
@@ -87,13 +86,25 @@ $(document).ready(function(){
         }
     });
     
-    // On interroge le serveur afin de savoir quand la partir commence;
-    function debutPartie() {
+    // On inscript le joueur.
+    function inscription() {
         var nom = $('#nom').val();
         console.log(nom);
         $.ajax({
-            url: 'debutPartie',
+            url: 'serveur',
             data: {nom : nom},
+            success: function (data, textStatus, jqXHR) {
+                if(data.response == 'ok'){
+                    idTimer.debutPartie = window.setInterval(debutPartie, timer.attentePartie);
+                }
+            }
+        });
+    }
+    
+    // On interroge le serveur afin de savoir quand la partir commence;
+    function debutPartie() {
+        $.ajax({
+            url: 'debutPartie',
             success: function (data, textStatus, jqXHR) {
                 if(data.response != 'non'){
                     $("#map").show();

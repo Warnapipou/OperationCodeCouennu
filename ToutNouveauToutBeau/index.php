@@ -23,9 +23,9 @@ and open the template in the editor.
         <script type="text/javascript" src="js/index.js"></script>
     </head>
     <body>
-        <form action="./serveur.php" onclick="debutPartie">
+        <form action="./serveur.php" onclick="inscription()">
             <input id="nom" type="text" name="nom"/>
-            <input type="button"/>
+            <input type="button" value="Envoyer"/>
 	</form>
         <div class="container-fluid">
             <div class="row">
