@@ -1,23 +1,53 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-		<title>1024 mètres</title>
-		<link rel="stylesheet" type="text/css" href="./stylesheet.css" />
-		<script type="text/javascript" src="./script.js"></script>     
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-	</head>
-	
-	<body> 
-		<div id="plateau">Plateau</div>
-		<div id="joueur1">Joueur1</div>
-		<div id="joueur2">Joueur2</div>
-		<div id="joueur3">Joueur3</div>
-		<div id="joueur4">Joueur4</div>
-		
-	</body>
-		 
-
-
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>1000 bornes</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="jquery-ui.css" />
+        <link rel="stylesheet" type="text/css" href="css/leaflet.css" />
+        <link rel="stylesheet" type="text/css" href="css/L.Mappy.css" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript" src="jquery-ui.js"></script>
+        <script type="text/javascript" src="js/leaflet.js"></script>
+        <script type="text/javascript" src="js/L.Mappy.js"></script>
+        <script type="text/javascript" src="js/bootstrap.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <div id="map" style="width: 100%; height: 600px;"></div>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-1">
+                    <img src="images/1000bornes/accident.png"/>
+                </div>
+                <div class="col-md-1">Botte 2</div>
+                <div id="conteneur_main">
+                    <div class="col-md-1 carte_main">
+                        <img src="images/1000bornes/25.png"/>
+                    </div>
+                    <div class="col-md-1 carte_main">
+                        <img src="images/1000bornes/vert.png"/>
+                    </div>
+                    <div class="col-md-1 carte_main">Carte 3</div>
+                    <div class="col-md-1 carte_main">Carte 4</div>
+                    <div class="col-md-1 carte_main">Carte 5</div>
+                    <div class="col-md-1 carte_main">Carte 6</div>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
-
