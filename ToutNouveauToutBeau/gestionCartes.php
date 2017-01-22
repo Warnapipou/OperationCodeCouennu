@@ -1,6 +1,6 @@
 <?php
 
-function ListeCartes(){
+function initDeck(){
 	$cartes = array();
 
 	foreach (range(0, 105) as $i) {
@@ -68,8 +68,24 @@ function ListeCartes(){
 	    	$cartes[$i] = 'limite_vitesse';
 	    }
 	}
+	
+	return $cartes;
+}
 
-	return shuffle($cartes);
+function melangerDeck(&$deck){
+	shuffle($cartes);
+}
+
+function Tirer6cartes(&$deck){
+	$res = array();
+	foreach(range(1,6) as $i){
+		$res[] = Piocher($deck);
+	}
+	return $res;
+}
+
+function Piocher(&$deck){
+	return array_shift($deck);;
 }
 
 ?>
