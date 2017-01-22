@@ -151,28 +151,6 @@ Gestion APIs
 var m_aCommerce = ['restaurant'];
 var m_iNbMaxValParCommerce = 10;
 
-function mappy(){
-	L.Mappy.setImgPath("./images");
-
-	// Création de la carte
-	var exampleMap1 = new L.Mappy.Map("MAP", {
-		clientId: 'dri_24hducode',
-		center: [43.604445,1.442954],
-		zoom: 7
-	});
-
-	// Création d'un layer contenant les marqueurs à afficher
-	var mLayer = L.layerGroup().addTo(exampleMap1);
-	 
-	
-	var applicationId  = "d140a6f6";
-	var applicationKey  = "26452728b034374bccb462e880bfb0e5";
-	
-	
-	checkAndDisplayPointAround(43.604445,1.442954,750,mLayer);
-
-}
-
 /*
 check la présence de tous les commerces autours d'un point et les affiches sur la carte
 */
