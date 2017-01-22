@@ -25,11 +25,12 @@
 			if($theIp->nodeValue == $ip){
 				$joueur = $theIp->parentNode;
 				//var_dump($joueur);
+				$cartes = $joueur->getElementsByTagName('Carte');
+				foreach ($cartes as $c)
+					$res[] = $c->nodeValue;
+				return $res;
 			}
-			$cartes = $joueur->getElementsByTagName('Carte');
-			foreach ($cartes as $c)
-				$res[] = $c->nodeValue;
-			return $res;
+			
 		}
 	}
 ?>
