@@ -73,7 +73,7 @@ function initDeck(){
 }
 
 function melangerDeck(&$deck){
-	shuffle($cartes);
+	shuffle($deck);
 }
 
 function Tirer6cartes(&$deck){
