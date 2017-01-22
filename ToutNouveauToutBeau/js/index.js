@@ -1,6 +1,6 @@
 $(document).ready(function(){
     
-    /*L.Mappy.setImgPath("images/");
+    L.Mappy.setImgPath("images/");
     // Création de la carte
     var map = new L.Mappy.Map("map", {
         clientId: 'dri_24hducode',
@@ -15,7 +15,7 @@ $(document).ready(function(){
     // Création d'un marqueur qu'on ajoute au layer
     var marker = L.marker([map._lastCenter.lat, map._lastCenter.lng]).addTo(mLayer);
     var marker = L.marker([48.003767, 0.197248]).addTo(mLayer);
-    */
+    
 
 
     /*var sUrl = "https://api.apipagesjaunes.fr/pros/find?what=restaurant&where=43.6044,1.44295&proximity=true&max=5&app_id=d140a6f6&app_key=26452728b034374bccb462e880bfb0e5";
@@ -98,6 +98,9 @@ function inscription() {
             if(data == 'ok'){
                 idTimer.debutPartie = window.setInterval(debutPartie, timer.attentePartie);
                 console.log("Joueur inscrit.");
+                $('#form-inscription').hide();
+                $('#plateau').show();
+                $("#load").removeClass('hidden');
             }
         }
     });
@@ -118,7 +121,7 @@ function debutPartie() {
                     if(image !== undefined)
                         img.attr('src', 'images/1000bornes/' + image + '.png');
                 });
-                console.log('récupération des cartes.');
+                console.log('recuperation des cartes.');
 
                 idTimer.monTour = window.setInterval(monTour, timer.monTour);
                 window.clearInterval(idTimer.debutPartie);
@@ -130,15 +133,15 @@ function debutPartie() {
 // On demande au serveur si c'est mon tour.
 function monTour() {
     $.ajax({
-        url: "/serveur/tour",
+        url: "tour",
         success: function (data, textStatus, jqXHR) {
-            if(data.response == 'ok'){
-                $("#loader").hidden();
+            if(data == 'ok'){
+                $("#load").addClass('hidden');
                 // On stop les appels ajax, c'est a moi de jouer.
                 window.clearInterval(idTimer.monTour);
             }
             else{
-                $("#loader").show();
+                $("#load").removeClass('hidden');
             }
         }
     });

@@ -9,7 +9,7 @@
 	foreach($joueurs as $joueur)
 		$iteration = $iteration + 1;
 	
-	if ($iteration > 0)
+	if ($iteration > 1)
 		echo json_encode(retrouverCarte($ip));
 	else
 		echo "non";
