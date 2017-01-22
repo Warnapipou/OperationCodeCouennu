@@ -88,4 +88,52 @@ function Piocher(&$deck){
 	return array_shift($deck);;
 }
 
+
+
+function jouerCarte($carte, $name){
+	$attaque = array(
+		"accident",
+		"panne_essence",
+		"creve",
+		"limite_vitesse",
+		"rouge"
+		);
+	$defense = array(
+		"reparation",
+		"essence",
+		"roue_secours",
+		"fin_limite_vitesse",
+		"vert"
+		);
+	$botte = array(
+		"as_volant",
+		"citerne",
+		"increvable",
+		"pompier"
+		);
+	$distance = array(
+		"25",
+		"50",
+		"75",
+		"100",
+		"200"
+		);
+
+	$dom = new DomDocument();
+	$dom->load('./config.xml');
+	
+	$joueurs = $dom->getElementsByTagName('Joueur');
+	foreach ($joueurs as $player) {
+		if($player.getElementsByTagName('Nom')->nodeValue == $name){
+			$listeCartes = $player.getElementsByTagName('Cartes');
+			foreach ($listeCartes as $cacarte) {
+				if($cacarte->nodeValue == $carte){
+					$listeCartes->removeChild($cacarte);
+				}
+			}
+		}
+	}
+}
+
+
 ?>
