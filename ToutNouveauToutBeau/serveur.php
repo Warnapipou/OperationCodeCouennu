@@ -1,7 +1,7 @@
 <?php
 	$iteration = 0;
 	$nom = $_GET['nom'];
-    $ip = $_SERVER['REMOTE_ADDR'];
+        $ip = $_SERVER['REMOTE_ADDR'];
 
 	$dom = new DomDocument();
 	$dom->load('./config.xml');
@@ -32,8 +32,16 @@
 		$carte->appendChild($txtCarte);
 		$cartesJoueur->appendChild($carte);
 	}
-		
-
+	
+        
+        $tour = $dom->getElementsByTagName('Tour');
+        if($tour->length == 0) {
+            $tour = $dom->createElement('Tour');
+            $nomJoueurTXT = $dom->createTextNode($ip);
+            $tour->appendChild($nomJoueurTXT);
+            $racine->appendChild($tour);
+        }
+            
 	$nouveauJoueur->appendChild($cartesJoueur);
 	$racine->appendChild($nouveauJoueur);
 
