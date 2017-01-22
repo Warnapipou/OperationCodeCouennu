@@ -85,6 +85,14 @@ function Tirer6cartes(&$deck){
 }
 
 function Piocher(&$deck){
+
+	$dom = new DomDocument();
+	$dom->load('./config.xml');
+
+	$pioche = $dom->getElementsByTagName('Decks');
+	
+
+
 	return array_shift($deck);;
 }
 
