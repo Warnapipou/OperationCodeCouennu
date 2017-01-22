@@ -147,6 +147,20 @@ function monTour() {
     });
 }
 
+function getCarte() {
+    $.ajax({
+        url: 'getCarte',
+        success: function (data, textStatus, jqXHR) {
+            var carte = data;
+            $('.conteneur_main img').each(function(){
+                if($(this).data('img') == 6) {
+                    $(this).attr('src', 'images/1000bornes/' + data + '.png');
+                }
+            });
+        }
+    })
+}
+
 /*
 
 Gestion APIs

@@ -68,7 +68,9 @@ and open the template in the editor.
                         <div class="col-md-1 carte_main" data-carte="">
                             <img src="" data-img="5"/>
                         </div>
-                        <div class="col-md-1"></div>
+                        <div class="col-md-1 carte_main" data-carte="">
+                            <img src="" data-img="6"/>
+                        </div>
                         <div class="col-md-1 defausse">Défausse</div>
                     </div>
                 </div>
