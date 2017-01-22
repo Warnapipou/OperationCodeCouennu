@@ -1,4 +1,9 @@
 <?php
+	include("gestionCartes.php");
+	$deck = initDeck();
+	melangerDeck($deck);
+
+
 	$iteration = 0;
 	$nom = $_GET['nom'];
         $ip = $_SERVER['REMOTE_ADDR'];
@@ -24,7 +29,7 @@
 	$nouveauJoueur->appendChild($ipJoueur);
 	
 	$cartesJoueur = $dom->createElement('Cartes');	
-	$cartes = tirer6Cartes();
+	$cartes = Tirer6cartes($deck);
 	foreach($cartes as $c){
 		$carte = $dom->createElement('Carte');
 		$txtCarte = $dom->createTextNode($c);
@@ -48,11 +53,6 @@
 		
 	$dom->save('./config.xml');
 	echo "ok";
-		
-	function tirer6Cartes(){
-		$listCartes= array("panne_essence","50");
-		return $listCartes;
-	}
 	
 	
 ?>
