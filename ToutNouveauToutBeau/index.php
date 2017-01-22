@@ -16,16 +16,16 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script type="text/javascript" src="jquery-ui.js"></script>
-        <script type="text/javascript" src="js/leaflet.js"></script>
-        <script type="text/javascript" src="js/L.Mappy.js"></script>
-        <script type="text/javascript" src="js/bootstrap.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
+        <script type="application/javascript" src="jquery-ui.js"></script>
+        <script type="application/javascript" src="js/leaflet.js"></script>
+        <script type="application/javascript" src="js/L.Mappy.js"></script>
+        <script type="application/javascript" src="js/bootstrap.js"></script>
+        <script type="application/javascript" src="js/index.js"></script>
     </head>
     <body>
         <form action="./serveur.php">
             <input id="nom" type="text" name="nom"/>
-            <input type="button" value="Envoyer" onclick="inscription"/>
+            <input type="button" value="Envoyer" onclick="inscription()"/>
 	</form>
         <div class="container-fluid">
             <div class="row">
@@ -50,10 +50,13 @@ and open the template in the editor.
                 <div class="col-md-1"></div>
                 <div id="conteneur_main">
                     <div class="col-md-1 carte_main" data-carte="25">
-                        <img src="images/1000bornes/25.png" data-img="1"/>
+                        <img src="" data-img="0"/>
                     </div>
                     <div class="col-md-1 carte_main" data-carte="vert">
-                        <img src="images/1000bornes/vert.png" data-img="2"/>
+                        <img src="" data-img="1"/>
+                    </div>
+                    <div class="col-md-1 carte_main" data-carte="">
+                        <img src="" data-img="2"/>
                     </div>
                     <div class="col-md-1 carte_main" data-carte="">
                         <img src="" data-img="3"/>
@@ -63,9 +66,6 @@ and open the template in the editor.
                     </div>
                     <div class="col-md-1 carte_main" data-carte="">
                         <img src="" data-img="5"/>
-                    </div>
-                    <div class="col-md-1 carte_main" data-carte="">
-                        <img src="" data-img="6"/>
                     </div>
                     <div class="col-md-1"></div>
                     <div class="col-md-1 defausse">Défausse</div>

@@ -114,7 +114,9 @@ function debutPartie() {
                 data = JSON.parse(data);
                 $('.carte_main').each(function(){
                     var img = $(this).children('img');
-                    img.attr('src', 'images/1000bornes/' + data[img.data('img')] + '.png');
+                    var image = data[img.data('img')];
+                    if(image !== undefined)
+                        img.attr('src', 'images/1000bornes/' + image + '.png');
                 });
 
                 //idTimer.monTour = window.setInterval(monTour, timer.monTour);
