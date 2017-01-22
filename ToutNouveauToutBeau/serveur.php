@@ -36,50 +36,15 @@
 
 	$nouveauJoueur->appendChild($cartesJoueur);
 	$racine->appendChild($nouveauJoueur);
-	
-	if ($iteration > 0){
-		echo "\n le jeu peut commencer\n ";
-	}
+
 		
 	$dom->save('./config.xml');
-	
+	echo "ok";
+		
 	function tirer6Cartes(){
 		$listCartes= array("panne_essence","50");
 		return $listCartes;
 	}
 	
-
-/*$listJoueur= array();
-attente();
-echo "je suis le serveur";
-
-$nom = $_GET['nom'];
-array_push($listJoueur, $nom);
-if (listJoueur.size > 1){
-	echo "debut de partie";
-}
-var_dump($listJoueur);
-
-
-*/
-
-/*private list;
-
-class joueur{
-	nom
-	listcartes
-}
-
-public function attente(){
-	$nom = $_GET['nom'];
-	list.add(nom, ip);
-	if list.taille > 1{
-		call debutpartie;
-	}
-}
-
-public function debutpartie(){
-	distributioncartes();
 	
-}*/
 ?>
