@@ -44,8 +44,8 @@ and open the template in the editor.
             </div>
             
             <div class="row">
-                <div class="col-md-1">
-                    <img src="images/1000bornes/accident.png"/>
+                <div id="conteneur-coup-foure1" class="col-md-1">
+                    <img src="" data-img="0"/>
                 </div>
                 <div class="col-md-1"></div>
                 <div id="conteneur_main">
@@ -72,12 +72,12 @@ and open the template in the editor.
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-1">
-                    <img src="images/1000bornes/limite_vitesse.png"/>
+                <div class="conteneur-coup-foure2 col-md-1">
+                    <img src="" data-img="0"/>
                 </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-1">
-                	<img src="images/1000bornes/citerne.png"/>
+                    <img src="images/1000bornes/citerne.png"/>
                 </div>
                 <div class="col-md-1">
                     Botte increvable

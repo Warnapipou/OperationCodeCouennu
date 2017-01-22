@@ -80,7 +80,7 @@ var images = {
 
 var timer = {
     attentePartie: 2500,
-    monTour: 1000,
+    monTour: 2500,
 };
 
 var idTimer = {
@@ -118,9 +118,9 @@ function debutPartie() {
                     if(image !== undefined)
                         img.attr('src', 'images/1000bornes/' + image + '.png');
                 });
+                console.log('récupération des cartes.');
 
-                //idTimer.monTour = window.setInterval(monTour, timer.monTour);
-                //console.log(idTimer.monTour);
+                idTimer.monTour = window.setInterval(monTour, timer.monTour);
                 window.clearInterval(idTimer.debutPartie);
             }
         }
